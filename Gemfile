@@ -34,6 +34,14 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'omniauth-slack'
 
+gem 'annotate'
+gem 'activerecord-import'
+gem 'httpclient'
+
+#お手軽メンテナンスモード
+gem 'turnout'
+gem 'whenever', :require => false
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
