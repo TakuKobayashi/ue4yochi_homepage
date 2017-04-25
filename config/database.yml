@@ -4,15 +4,16 @@ default: &default
   timeout: 3000
   encoding: utf8
   username: root
+  password:
 
 development:
   <<: *default
-  database: ue4yochi_development
+  database: homepage_development
 
 test:
   <<: *default
-  database: ue4yochi_test
+  database: homepage_test
 
 production:
   <<: *default
-  database: ue4yochi_production
+  database: homepage_production

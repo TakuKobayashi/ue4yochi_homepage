@@ -32,15 +32,27 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'omniauth-slack'
-
 gem 'annotate'
 gem 'activerecord-import'
 gem 'httpclient'
+gem 'kaminari'
+gem 'twitter'
+gem 'tweetstream'
 
-#お手軽メンテナンスモード
-gem 'turnout'
 gem 'whenever', :require => false
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-slack'
+
+gem 'eventmachine'
+gem 'faye-websocket'
+gem 'timers'
+
+gem 'google-api-client', '~> 0.11'
+gem 'youtube-dl.rb'
+
+gem 'charwidth'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
