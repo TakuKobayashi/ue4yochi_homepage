@@ -10,60 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170424093830) do
-
-  create_table "board_game_mania_events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "event_id",                           null: false
-    t.string   "type",                               null: false
-    t.string   "keyword",                            null: false
-    t.string   "title",                              null: false
-    t.string   "url",                                null: false
-    t.string   "description",                        null: false
-    t.datetime "started_at",                         null: false
-    t.datetime "ended_at",                           null: false
-    t.integer  "limit",                  default: 0, null: false
-    t.string   "address",                            null: false
-    t.string   "place",                              null: false
-    t.float    "lat",         limit: 24
-    t.float    "lon",         limit: 24
-    t.string   "owner_id",                           null: false
-    t.string   "owner_name"
-    t.index ["event_id", "type"], name: "board_gameevent_type_event_id_index", unique: true, using: :btree
-    t.index ["keyword"], name: "board_gameevent_keyword_index", using: :btree
-    t.index ["started_at", "ended_at"], name: "board_gameevent_published_range_index", using: :btree
-  end
-
-  create_table "board_game_mania_youtube_video_relateds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "youtube_video_id",    null: false
-    t.integer "to_youtube_video_id", null: false
-    t.index ["to_youtube_video_id"], name: "youtube_video_related_to_id_index", using: :btree
-    t.index ["youtube_video_id"], name: "youtube_video_related_from_id_index", using: :btree
-  end
-
-  create_table "board_game_mania_youtube_video_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "youtube_video_id", null: false
-    t.string  "tag",              null: false
-    t.index ["tag"], name: "index_board_game_mania_youtube_video_tags_on_tag", using: :btree
-    t.index ["youtube_video_id", "tag"], name: "youtube_video_id_tag_index", unique: true, using: :btree
-  end
-
-  create_table "board_game_mania_youtube_videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "video_id",                          default: "", null: false
-    t.integer  "youtube_channel_id"
-    t.integer  "youtube_category_id"
-    t.string   "title",                             default: "", null: false
-    t.text     "description",         limit: 65535
-    t.string   "thumnail_image_url",                default: "", null: false
-    t.datetime "published_at"
-    t.integer  "comment_count",                     default: 0,  null: false
-    t.integer  "dislike_count",                     default: 0,  null: false
-    t.integer  "like_count",                        default: 0,  null: false
-    t.integer  "favorite_count",                    default: 0,  null: false
-    t.bigint   "view_count",                        default: 0,  null: false
-    t.index ["published_at"], name: "youtube_published_at_index", using: :btree
-    t.index ["video_id"], name: "youtube_video_id_index", unique: true, using: :btree
-    t.index ["youtube_channel_id"], name: "youtube_channel_id_index", using: :btree
-  end
+ActiveRecord::Schema.define(version: 20170424033808) do
 
   create_table "moivoice_live_stream_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",                                      null: false

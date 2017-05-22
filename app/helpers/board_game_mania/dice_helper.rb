@@ -1,2 +1,0 @@
-module BoardGameMania::DiceHelper
-end
