@@ -1,2 +1,0 @@
-module Moivoice::StreamingHelper
-end
