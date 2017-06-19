@@ -4,3 +4,8 @@ twitter:
   bot:
     access_token_key:
     access_token_secret:
+
+slack:
+  client_id:
+  client_secret:
+  verification_token:
