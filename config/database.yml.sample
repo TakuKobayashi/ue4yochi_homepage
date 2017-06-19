@@ -8,12 +8,12 @@ default: &default
 
 development:
   <<: *default
-  database: homepage_development
+  database: ue4yochi_development
 
 test:
   <<: *default
-  database: homepage_test
+  database: ue4yochi_test
 
 production:
   <<: *default
-  database: homepage_production
+  database: ue4yochi_production
