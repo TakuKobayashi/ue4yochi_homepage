@@ -4,7 +4,7 @@ class Atnd < Event
 
   def self.find_event
     http_client = HTTPClient.new
-    response = http_client.get(ATND_API_URL, {owner_id: "ue4yochi", count: 100, start: start, format: :json}, {})
+    response = http_client.get(ATND_API_URL, {keyword: "UE4よちよち勉強会", count: 100, format: :json}, {})
     return JSON.parse(response.body)
   end
 

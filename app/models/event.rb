@@ -34,7 +34,7 @@ class Event < ApplicationRecord
   end
 
   def generate_tweet_text
-     tweet_words = ["勉強会開催します!!", self.url, , self.started_at.strftime("%Y年%m月%d日 %H:%M開始")]
+     tweet_words = ["勉強会開催します!!", self.url, self.started_at.strftime("%Y年%m月%d日 %H:%M開始")]
      if self.limit_number.present?
        tweet_words << "定員#{self.limit_number}人"
      end
