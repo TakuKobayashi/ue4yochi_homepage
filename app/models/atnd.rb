@@ -14,10 +14,6 @@ class Atnd < Event
     atnd_events = []
     events_response["events"].each_with_index do |res|
       event = res["event"]
-      if event["event_id"].to_s == last_update_event_id
-        stop_flg = true
-        break
-      end
       atnd_event = Atnd.new(
         event_id: event["event_id"].to_s,
         title: event["title"].to_s,

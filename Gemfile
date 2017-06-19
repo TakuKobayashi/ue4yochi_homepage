@@ -50,6 +50,7 @@ gem 'faye-websocket'
 gem 'timers'
 
 gem 'google-api-client', '~> 0.11'
+gem 'charwidth'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
