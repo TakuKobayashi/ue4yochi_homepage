@@ -4,6 +4,18 @@
 # the maximum value specified for Puma. Default is set to 5 threads for minimum
 # and maximum, this matches the default thread size of Active Record.
 #
+
+before_fork do
+  PumaWorkerKiller.config do |config|
+    config.ram           = 2048
+    config.frequency     = 5
+    config.percent_usage = 0.8
+    config.rolling_restart_frequency = 12 * 3600
+    config.reaper_status_logs = true
+  end
+  PumaWorkerKiller.start
+end
+
 threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }.to_i
 threads threads_count, threads_count
 
