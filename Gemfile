@@ -54,6 +54,10 @@ gem 'charwidth'
 
 gem 'rails-i18n', '~> 5.0.0'
 
+gem 'devise'
+gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
+gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
+
 gem 'puma_worker_killer'
 
 # Use Capistrano for deployment
